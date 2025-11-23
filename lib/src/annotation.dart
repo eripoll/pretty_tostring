@@ -1,0 +1,3 @@
+class PrettyPrintable {
+  const PrettyPrintable();
+}

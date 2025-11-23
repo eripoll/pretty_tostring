@@ -1,0 +1,18 @@
+targets:
+  $default:
+    builders:
+      pretty_tostring:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**
+            - test/**
+
+builders:
+  pretty_tostring:
+    import: "package:pretty_tostring/builder.dart"
+    builder_factories: ["prettyBuilder"]
+    build_extensions: {".dart": [".pretty.g.dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]

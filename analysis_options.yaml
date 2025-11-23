@@ -1,0 +1,94 @@
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - dart_code_linter
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    unused_element: warning
+    unused_field: warning
+    unused_local_variable: warning
+    unnecessary_import: warning
+    unnecessary_late: warning
+    unused_import: warning
+    dead_code: warning
+
+dart_code_linter:
+  metrics:
+    cyclomatic-complexity: 20
+    maintainability-index: 50
+    maximum-nesting: 5
+    number-of-parameters: 5
+    source-lines-of-code: 50
+  metrics-exclude:
+    - test/**
+  rules:
+    # - avoid-dynamic
+    - avoid-passing-async-when-sync-expected
+    - avoid-redundant-async
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unrelated-type-assertions
+    - avoid-unused-parameters
+    - avoid-nested-conditional-expressions
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
+    - prefer-conditional-expressions
+    - no-equal-then-else
+    - prefer-moving-to-variable
+    - prefer-match-file-name
+
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    always_declare_return_types: true
+    always_use_package_imports: true
+    cancel_subscriptions: true
+    always_put_required_named_parameters_first: true
+    always_specify_types: true
+    annotate_overrides: true
+    avoid_unnecessary_containers: true
+    directives_ordering: true
+    flutter_style_todos: true
+    lines_longer_than_80_chars: true
+    null_check_on_nullable_type_parameter: true
+    prefer_conditional_assignment: true
+    prefer_const_constructors: true
+    prefer_if_null_operators: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    sized_box_for_whitespace: true
+    sized_box_shrink_expand: true
+    sort_child_properties_last: true
+    sort_constructors_first: true
+    use_super_parameters: true
+    avoid_unused_constructor_parameters: true
+    unnecessary_late: true
+  
+    
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
