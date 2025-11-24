@@ -20,11 +20,35 @@ String _prettyValueFor$className(Object? value, int indent) {
     if (value.isEmpty) {
       return '[]';
     }
+
+    // Smart sorting
+    List<Object?> sorted = List<Object?>.from(value);
+
+    // Sort strings alphabetically
+    if (sorted.every((e) => e is String)) {
+      sorted.sort((a, b) => (a as String).compareTo(b as String));
+    }
+    // Sort other Comparables
+    else if (sorted.every((e) => e is Comparable)) {
+      sorted.sort((a, b) => (a as Comparable).compareTo(b));
+    }
+    // Otherwise do not sort (mixed types)
+
     final StringBuffer buffer = StringBuffer();
     buffer.writeln('[');
-    for (final Object? item in value) {
-      buffer.writeln(_prettyValueFor$className(item, indent + 1));
+
+    for (int index = 0; index < sorted.length; index++) {
+      final Object? item = sorted[index];
+      buffer.write(ii);
+      buffer.write(_prettyValueFor$className(item, indent + 1));
+
+      if (index < sorted.length - 1) {
+        buffer.writeln(',');
+      } else {
+        buffer.writeln();
+      }
     }
+
     buffer.write('\$i]');
     return buffer.toString();
   }
