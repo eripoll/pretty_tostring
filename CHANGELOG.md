@@ -1,4 +1,9 @@
+## 1.0.1
+
+- Updated dependencies
+
 ## 1.0.0
+
 - Initial release.
 - Added @PrettyPrintable() annotation.
 - Added @PrettyIgnore() and @PrettyObfuscate().

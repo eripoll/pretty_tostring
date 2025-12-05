@@ -1,6 +1,6 @@
 name: pretty_tostring
 description: Generates structured toString() implementations for annotated classes.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/eripoll/pretty_tostring
 issue_tracker: https://github.com/eripoll/pretty_tostring/issues
 homepage: https://github.com/eripoll/pretty_tostring
@@ -8,7 +8,7 @@ environment:
   sdk: '>=3.10.1 <4.0.0'
 
 dependencies:
-  analyzer: ^8.0.0
+  analyzer: ^9.0.0
   build: ^4.0.3
   source_gen: ^4.1.1
 
